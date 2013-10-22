@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # checkout the repository and get into the svn top directory
-svn checkout $1 ~/svn/svnCounter/ --username '$2' --password '$3'
+svn checkout $1 ~/svn/svnCounter/ --username '$2' --password '$3' > /dev/null
 cd ~/svn/svnCounter/
 
 # capturing the version of the repository
