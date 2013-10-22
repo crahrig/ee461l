@@ -17,7 +17,7 @@ echo Version: $version
 for i in $(seq 1 $(($version - 1)))
    do
       j=$(($i + 1))
-      changes=$(svn diff -r $i:$j | diffstat | tail -1 | sed -e 's/^[^,]*, //')
+      changes=$(($(svn diff -r $i:$j | diffstat | tail -1 | sed -e 's/^[^,]*, //' | sed 's/[^0-9^+]*//g' | sed '/\+$/s=$=0=')))
       echo There are $changes different lines between R$i and R$j
    done
 # print Done
