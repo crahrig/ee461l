@@ -1,0 +1,17 @@
+<property name="src.dir" value="~/git/ee461l/tutorial7/src"/>
+<property name="build.dir" value="~/git/ee461l/tutorial7/build"/>
+<property name="dist.dir" value="dist"/>
+<property name="jar.dir" value="lib"/>
+<property name="dist.jar.dir" value="${dist.dir}/${jar.dir}"/>
+
+<mkdir dir="${build.dir}"/>
+<delte dir="${build.dir}"/>
+
+<property name="my_src.dir" value="~/git/ee461l/tutorial7/my_src"/>
+<property name="my_classes.dir" value="~/git/ee461l/tutorial7/my_classes"/>
+<property name="my_jarfile.jar" value="~/git/ee461l/tutorial7/"/>
+<javac srcdir="my_src" destdir="my_classes" classpath="my_jarfile" includeantruntime="false"/>
+
+<jar jarfile="my_jar.jar" basedir="my_classes"/>
+
+<java jar="my_jar.jar" fork="true"/>
